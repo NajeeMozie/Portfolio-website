@@ -11,27 +11,34 @@ body{
     background: #1f242d;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
-    color: #fff;
+    color: #e3e3e3;
     text-decoration: none;
 }
 
 .navbar {
-    position: fixed;
+    position: sticky;
     left: 0;
     top: 0;
     width: 100%;
     padding: 25px 9%;
-    /*background: slateblue;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
+    font-family: monospace;
+    background: #1f242d;
+
 }
 
 .navbar .logo {
     font-size: 30px;
     font-weight: 700;
+    font-family: monospace;
 }
 
 .navbar ul {
@@ -57,21 +64,48 @@ a {
 .home {
     display: flex;
     justify-content: center;
+    font-family: monospace;
     align-items: center;
-    height: 50vh;
-    padding: 60px 9% 0;
+    height: 100vh;
+    padding: 100px 9% 0;
     color: #fff;
+    
+}
+/* typer wtiter effect */
+.home-info {
+    display: inline-block;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 6s steps(49, end),
+        cursor .5s step-end infinite alternate;
+}
+
+/* make cursor blink */
+@keyframes cursor {
+    50% { border-color: transparent }
+}
+
+/*typing effect */
+@keyframes typing {
+    from { width: 0} 
 }
 
 .home-info h1 {
     text-align: center;
     font-size: 55px;
+    font-family: monospace;
+
 }
 
 .home-info h2 {
     text-align: center;
     font-size: 32px;
     margin-top: -10px;
+    font-family: monospace;
+
 }
 
 .home-info p {
@@ -128,24 +162,23 @@ a {
 
 .about__content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 50px;
     padding: 50px 10%;
 }
 
 
 .about__content-main {
-    flex: 1; /*Get to know me (left) takes up 50% */
-    max-width: 55%;
-    text-align: left;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .about__content-skills {
-    flex: 1;
-    
-    text-align: left;
+    text-align: center;
 }
 
 
@@ -158,14 +191,44 @@ a {
     font-weight: bold;
 }
 
-.heading-sec__main {
-    display: flex;
-    justify-content: space-around;
+.about__content-main {
+    color: #e3e3e3;
 }
 
-.heading-sec__sub {
-    display: flex;
-    justify-content: space-around;
+.about__content-title-skills {
+    color: #e3e3e3
 }
 
+.about__content-title-certificaitons {
+    color: #e3e3e3;
+}
 
+.working-on-sec-pad {
+    padding: 120px;
+}
+
+.working-on-title {
+    display: flex;
+    justify-content: space-around;
+    color: #e3e3e3;
+    
+}
+
+.working-on-par {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align:left;
+    color: #e3e3e3;
+}
+
+.footer-contanier {
+    background-color: black;
+    padding: 80px;
+    color: #e3e3e3;
+
+}
+
+.about__content-details {
+    text-align: left;
+}
